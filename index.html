@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>House Price Prediction</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:'Poppins',sans-serif;
+        }
+
+        body{
+
+            background:linear-gradient(135deg,#1f4e79,#3f87a6,#6dd5ed);
+
+            min-height:100vh;
+
+            display:flex;
+
+            justify-content:center;
+
+            align-items:center;
+
+            padding:30px;
+
+        }
+
+        .main-card{
+
+            width:100%;
+
+            max-width:1100px;
+
+            background:rgba(255,255,255,.15);
+
+            backdrop-filter:blur(15px);
+
+            border-radius:20px;
+
+            box-shadow:0 20px 50px rgba(0,0,0,.3);
+
+            overflow:hidden;
+
+        }
+
+        .header{
+
+            background:#0d6efd;
+
+            color:white;
+
+            padding:25px;
+
+            text-align:center;
+
+        }
+
+        .header h1{
+
+            font-size:36px;
+
+            font-weight:700;
+
+        }
+
+        .header p{
+
+            margin-top:8px;
+
+            font-size:17px;
+
+        }
+
+        .card-body{
+
+            padding:35px;
+
+        }
+
+        label{
+
+            font-weight:600;
+
+            color:#fff;
+
+            margin-bottom:8px;
+
+        }
+
+        .form-control{
+
+            border-radius:12px;
+
+            border:none;
+
+            padding:12px;
+
+            margin-bottom:20px;
+
+            box-shadow:0 3px 10px rgba(0,0,0,.15);
+
+        }
+
+        .form-control:focus{
+
+            border:2px solid #0d6efd;
+
+            box-shadow:0 0 12px rgba(13,110,253,.4);
+
+        }
+
+        .btn-predict{
+
+            width:260px;
+
+            padding:14px;
+
+            font-size:20px;
+
+            font-weight:bold;
+
+            border-radius:50px;
+
+            background:#0d6efd;
+
+            border:none;
+
+            transition:.3s;
+
+        }
+
+        .btn-predict:hover{
+
+            transform:scale(1.05);
+
+            background:#084298;
+
+        }
+
+        footer{
+
+            background:#0d6efd;
+
+            color:white;
+
+            text-align:center;
+
+            padding:18px;
+
+            font-size:17px;
+
+            font-weight:500;
+
+        }
+
+        footer span{
+
+            color:#FFD700;
+
+            font-weight:bold;
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="main-card">
+
+    <div class="header">
+
+        <h1>🏠 House Price Prediction</h1>
+
+        <p>Predict House Prices using Machine Learning</p>
+
+    </div>
+
+    <div class="card-body">
+
+        <form action="/predict" method="POST">
+
+            <div class="row">
+
+                <div class="col-md-4">
+                    <label>Overall Quality</label>
+                    <input type="number" class="form-control" name="Overall Qual" placeholder="Enter Overall Quality" required>
+                </div>
+
+                <div class="col-md-4">
+                    <label>Overall Condition</label>
+                    <input type="number" class="form-control" name="Overall Cond" placeholder="Enter Overall Condition" required>
+                </div>
+
+                <div class="col-md-4">
+                    <label>Year Built</label>
+                    <input type="number" class="form-control" name="Year Built" placeholder="Enter Year Built" required>
+                </div>
+
+                <div class="col-md-4">
+                    <label>Ground Living Area</label>
+                    <input type="number" class="form-control" name="Gr Liv Area" placeholder="Sq Ft" required>
+                </div>
+
+                <div class="col-md-4">
+                    <label>Garage Cars</label>
+                    <input type="number" class="form-control" name="Garage Cars" placeholder="Garage Capacity" required>
+                </div>
+
+                <div class="col-md-4">
+                    <label>Garage Area</label>
+                    <input type="number" class="form-control" name="Garage Area" placeholder="Garage Area" required>
+                </div>
+
+                <div class="col-md-4">
+                    <label>Total Basement SF</label>
+                    <input type="number" class="form-control" name="Total Bsmt SF" placeholder="Basement Area" required>
+                </div>
+
+                <div class="col-md-4">
+                    <label>Full Bathrooms</label>
+                    <input type="number" class="form-control" name="Full Bath" placeholder="Bathrooms" required>
+                </div>
+
+                <div class="col-md-4">
+                    <label>Bedrooms</label>
+                    <input type="number" class="form-control" name="Bedroom AbvGr" placeholder="Bedrooms" required>
+                </div>
+
+                <div class="col-md-12">
+                    <label>Lot Area</label>
+                    <input type="number" class="form-control" name="Lot Area" placeholder="Lot Area" required>
+                </div>
+
+            </div>
+
+            <div class="text-center mt-4">
+
+                <button class="btn btn-primary btn-predict">
+
+                    🔍 Predict Price
+
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+    <footer>
+
+        Developed with ❤️ by <span>Soham Rajapurkar</span><br>
+
+        © 2026 House Price Prediction | Machine Learning Project
+
+    </footer>
+
+</div>
+
+</body>
+
+</html>
